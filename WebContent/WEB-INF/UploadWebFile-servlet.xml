@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans 
+		http://www.springframework.org/schema/beans/spring-beans-4.2.xsd
+		
+		http://www.springframework.org/schema/context 
+		http://www.springframework.org/schema/context/spring-context-4.2.xsd
+		
+		http://www.springframework.org/schema/mvc 
+		http://www.springframework.org/schema/mvc/spring-mvc-4.2.xsd"
+		
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:mvc="http://www.springframework.org/schema/mvc" >
+
+
+	<context:component-scan base-package="net.xaduin.spring4.uploadwebfile.controller" />	
+	 
+	<bean id="viewResolver"
+		class="org.springframework.web.servlet.view.UrlBasedViewResolver">
+		<property name="viewClass"
+			value="org.springframework.web.servlet.view.JstlView" />
+		<property name="prefix" value="/WEB-INF/jsp/" />
+		<property name="suffix" value=".jsp" />
+	</bean>
+	
+	
+	
+    <!-- resources from servlet mapping -->
+    <!--
+    	Ojo esto funciona xq en el web.xml tenemos la forma de mapeado '/', es decir, 
+    	esta configurado como: <servlet-mapping><url-pattern>/</url-pattern></servlet-mapping>  
+    	Y es necesario tener agregado el <mvc:annotation-driven/>
+   	-->  
+   	<mvc:annotation-driven/>
+   	
+    <mvc:resources mapping="/resources/**" location="/resources/themes/default/"/>
+    <mvc:resources mapping="/css/**" location="/resources/themes/default/css/"/>
+    <mvc:resources mapping="/img/**" location="/resources/themes/default/img/"/>
+    <mvc:resources mapping="/js/**"  location="/resources/themes/default/js/"/>
+    <mvc:resources mapping="/uploads/**"  location="/resources/uploads/"/>
+    
+</beans>
