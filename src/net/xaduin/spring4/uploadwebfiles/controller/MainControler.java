@@ -1,4 +1,4 @@
-package net.xaduin.spring4.uploadwebfile.controller;
+package net.xaduin.spring4.uploadwebfiles.controller;
 
 import javax.annotation.PostConstruct;
 
@@ -10,18 +10,17 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.ModelAndView;
 
-
 import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
-
+import net.xaduin.spring4.uploadwebfiles.form.FileUploadForm;
 
 
 @Controller
 @RequestMapping("/")
-public class FileUploadControler {
+public class MainControler {
 
 	@PostConstruct
 	public void showInit() {
@@ -41,12 +40,12 @@ public class FileUploadControler {
 	public ModelAndView save( 	@ModelAttribute("uploadForm") FileUploadForm uploadForm,
 								Model map) throws IllegalStateException, IOException {
 				
-		String saveDirectory = "uploads";
+		String saveDirectory = "/home/manu/tmp/uploads/";
 		
 		List<MultipartFile> uploadFiles = uploadForm.getFiles();
 		List<String> fileNames = new ArrayList<String>();
 		
-		if(null != uploadFiles && uploadFiles.size > 0) {
+		if(null != uploadFiles && uploadFiles.size() > 0) {
 			for(MultipartFile multipartFile : uploadFiles) {
 				String fileName = multipartFile.getOriginalFilename();
 				if(!"".equalsIgnoreCase(fileName)) {

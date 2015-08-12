@@ -1,4 +1,4 @@
-package net.xaduin.spring4.uploadwebfile.controller;
+package net.xaduin.spring4.uploadwebfiles.controller;
 
 import javax.annotation.PostConstruct;
 

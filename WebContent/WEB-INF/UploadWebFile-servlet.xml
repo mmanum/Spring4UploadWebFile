@@ -14,7 +14,7 @@
 	xmlns:mvc="http://www.springframework.org/schema/mvc" >
 
 
-	<context:component-scan base-package="net.xaduin.spring4.uploadwebfile.controller" />	
+	<context:component-scan base-package="net.xaduin.spring4.uploadwebfiles.controller" />	
 	 
 	<bean id="viewResolver"
 		class="org.springframework.web.servlet.view.UrlBasedViewResolver">
@@ -24,8 +24,10 @@
 		<property name="suffix" value=".jsp" />
 	</bean>
 	
-	
-	
+	<!-- Lo necesitamos para el file upload.  -->
+	<bean id="multipartResolver"
+        class="org.springframework.web.multipart.commons.CommonsMultipartResolver" />
+        
     <!-- resources from servlet mapping -->
     <!--
     	Ojo esto funciona xq en el web.xml tenemos la forma de mapeado '/', es decir, 

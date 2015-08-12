@@ -13,10 +13,13 @@
 		<li><a href="welcome">welcome</a></li>
 		<li><a href="welcome.htm">welcome.htm</a></li>
 		<li><a href="welcome.html">welcome.html</a></li>
-
+		<li></li>
 		<li><a href="welcome/index.html">welcome/index.html</a></li>
 		<li><a href="welcome/index.html">welcome/index.html</a></li>
-		<li><a href="welcome/hi">welcome/hi</a></li>
+		<li><a href="welcome/hi">welcome/hi</a></li>	
+		<li></li>
+		<li><a href="upload">uploads</a></li>
+		<li><a href="upload.html">welcome/index.html</a></li>
 	</ul>
 </body>
 </html>

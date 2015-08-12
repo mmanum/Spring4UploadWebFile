@@ -12,7 +12,6 @@
         
     <!-- My CSS -->
     <link rel="stylesheet" href="<c:url value='/css/style.css'/>">
-	<link rel="stylesheet" href="<c:url value='/css/table/table.css'/>">
 	
 </head>
 <body>
